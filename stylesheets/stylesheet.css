@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #e4d6a7 url("../images/bkg1.jpg") 0 0;
+  background: url("../images/bkg1.jpg") 0 0;
   color: #eaeaea;
   font: 16px;
   line-height: 1.5;
