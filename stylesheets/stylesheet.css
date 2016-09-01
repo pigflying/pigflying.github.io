@@ -23,6 +23,7 @@ ol, ul { padding: 0; list-style-type: none; }
   letter-spacing: 40px;
 }
 
+/*
 .zcontent {
   text-align: center;
 }
@@ -32,4 +33,32 @@ ol, ul { padding: 0; list-style-type: none; }
 .zcontent zself ul li {
   text-align: left;
   list-style: none;
+}*/
+
+.zcontent {
+  width:65%;
+  float:left;
+}
+.zcontent article {
+  padding-left:20%;
+}
+.zcontent article span a {
+  padding-left: 25px;
+}
+.zaside {
+  width:30%;
+  float:left;
+  border: 2px solid aquamarine;
+  border-radius: 10px;
+  line-height: 35px;
+  padding-left: 20px;
+}
+.zaside ul {
+  width: 70%;
+  float: left;
+}
+.zaside img {
+  width: 100px;
+  height: 120px;
+  padding-top: 10px;
 }

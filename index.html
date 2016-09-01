@@ -3,71 +3,48 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
-    <!--
-      <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-      <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    -->
-
-    <title>Pig can fly!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="stylesheets/global.css">
+    <link rel="stylesheet" href="stylesheets/zepto.fullpage.css">
+    <title>我们结婚啦!</title>
   </head>
 
   <body>
-
-  <!--标题
-  <div class="ztitle"><p>衡子</p></div>
-  <div class="zcontent">
-    <div class="zself">
-      <article>
-        <title>简介</title>
-        <ul>
-          <li>
-            <label>姓名：</label>
-            <span>赵衡</span>
-          </li>
-        </ul>
-      </article>
+    <div class="wp">
+        <div class="wp-inner">
+            <div class="page page1">
+                <div class="js-animate" data-animate="bounce">bounce</div>
+            </div>
+            <div class="page page2">
+                <div class="js-animate" data-animate="slideDown">slideDown</div>
+            </div>
+            <div class="page page3">
+                <div class="js-animate" data-animate="slideLeft">slideLeft</div>
+            </div>
+            <div class="page page4">
+                <div class="js-animate" data-animate="hatch">hatch</div>
+            </div>
+        </div>
     </div>
-    <div>
-      <a href="http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=402340325&idx=1&sn=5b7bf6025b1a83a0e529e630fc95ae28&scene=0#wechat_redirect">从0到1：微信后台系统的演进之路</a><br>
-      <a href="http://www.cnblogs.com/gaochundong/p/3813252.html">常用数据结构及复杂度</a><br>
-      <a href="http://www.hollischuang.com/archives/489">Java工程师成神之路</a><br>
-      <a href="http://www.scala-lang.org/old/node/8610">Scala程序员的等级</a><br>
-      <a href="http://36kr.com/p/5042226.html">创业型公司如何做好监控报警</a><br>
-    </div>
-  </div>-->
-  <header class="ztitle"><p>衡子</p></header>
-  <section style="width:70%;;float:left;">
-    <article style="padding-left:10%;">
-      <header>文章地址：</header>
-      <span>
-        <a href="http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=402340325&idx=1&sn=5b7bf6025b1a83a0e529e630fc95ae28&scene=0#wechat_redirect">从0到1：微信后台系统的演进之路</a><br>
-        <a href="http://www.cnblogs.com/gaochundong/p/3813252.html">常用数据结构及复杂度</a><br>
-        <a href="http://www.hollischuang.com/archives/489">Java工程师成神之路</a><br>
-        <a href="http://www.scala-lang.org/old/node/8610">Scala程序员的等级</a><br>
-        <a href="http://36kr.com/p/5042226.html">创业型公司如何做好监控报警</a><br>
-        <a href="https://github.com/jobbole/awesome-java-cn">java资源收集</a><br>
-        <a href="https://github.com/spring-projects/spring-framework">Spring源码</a><br>
-        <a href="http://www.zuidaima.com/share/1781583829978112.htm">pom.xml中配置的参数说明</a><br>
-        <a href="https://www.javacodegeeks.com/courses/">java学习资源</a><br>
-        <a href="http://top.jobbole.com/15689/">github上的东西</a>
-      </span>
-    </article>
-  </section>
-  <aside style="width:30%;float:left;">
-    <ul>
-      <li>
-        <label>姓名：</label><span>赵衡</span>
-      </li>
-      <li>
-        <label>性别：</label><span>男</span>
-      </li>
-      <li>
-        <label>电话：</label><span>159*******1</span>
-      </li>
-    </ul>
-  </aside>
+    <span class="start"><b></b></span>
+    <script src="javascripts/zepto.min.js"></script>
+    <script src="javascripts/zepto.fullpage.js"></script>
+    <script>
+        $('.wp-inner').fullpage({
+            change: function (e) {
+                // 移除动画属性
+                $('.page').eq(e.cur).find('.js-animate').each(function() {
+                    $(this).removeClass($(this).data('animate')).hide();
+                });
+            },
+            afterChange: function (e) {
+                // 添加动画属性
+                $('.page').eq(e.cur).find('.js-animate')
+                    .each(function () {
+                        $(this).addClass($(this).data('animate')).show();
+                    });
+            }
+        });
+    </script>
   </body>
-  <footer style="width:100%;float:left;">哈哈！是不是很逗比！</footer>
 </html>
